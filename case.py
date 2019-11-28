@@ -1,29 +1,32 @@
 import pygame
 import random
-import odds
-import csgo_weapon_case as case1
+import modules.odds as odds
+import modules.cases.csgo_weapon_case as case1
+import modules.cases.esports_2013_case as case2
+
+
+# Pygame Initialization #
 
 pygame.init()
-
 mainLoop = True
-
 size = (512, 512)
 screen = pygame.display.set_mode(size)
 clock = pygame.time.Clock()
 pygame.display.set_caption("CSGO Case Unboxer")
+screen.fill((255, 255, 255))
 loopCount = 0
+image_assets_path = "assets/images/"
 
-# Chances
+###########################
 
+# CS:GO Case Initialization #
 
-# # # # # CS:GO Weapon Case # # # # #
-
-
-# # # # #
-
+list_of_cases = ["placeholder", case1, case2]
 case_opened = False
-csgo_weapons_case = False
-show_skin_image = False
+show_image_skin = False
+show_image_case = False
+show_image_stattrak = False
+image_stattrak = pygame.image.load(image_assets_path + "stattrak.png")
 
 while mainLoop:
 
@@ -34,89 +37,157 @@ while mainLoop:
 
         elif event.type == pygame.KEYDOWN:
             if event.key == pygame.K_q:
-                csgo_weapons_case = True
+                case_opened = True
+                case_id = 1
+            if event.key == pygame.K_w:
+                case_opened = True
+                case_id = 2
+
+    # Pygame Loop #
     screen.fill((255, 255, 255))
-    rarity_float = 100 * random.random()
+    ###############
 
-    if csgo_weapons_case == True:
+    # CS:GO Case Loop #
 
-        case_name = "csgo_weapons_case"
+    if case_opened == True:
+
+        rarity_float = 100 * random.random()
+        image_case = pygame.image.load(
+            image_assets_path + list_of_cases[case_id].case_name + "/" + "case.png"
+        )
+        show_image_stattrak = False
+        show_image_skin = False
 
         if rarity_float <= odds.mil_spec:
-            selected_skin = random.randint(0, len(case1.mil_spec) - 1)
-            print(
-                case1.mil_spec[selected_skin]["weapon"]
+            selected_skin = random.randint(0, len(list_of_cases[case_id].mil_spec) - 1)
+            skin_full_name = (
+                list_of_cases[case_id].mil_spec[selected_skin]["weapon"]
                 + " | "
-                + case1.mil_spec[selected_skin]["skin"]
+                + list_of_cases[case_id].mil_spec[selected_skin]["skin"]
             )
-            skin_image = pygame.image.load(
-                "./assets/"
-                + case_name
+            image_skin = pygame.image.load(
+                image_assets_path
+                + list_of_cases[case_id].case_name
                 + "/"
-                + str(case1.mil_spec[selected_skin]["id"])
+                + str(list_of_cases[case_id].mil_spec[selected_skin]["id"])
                 + ".png"
             )
 
         elif rarity_float <= odds.restricted and rarity_float >= odds.mil_spec:
-            selected_skin = random.randint(0, len(case1.restricted) - 1)
-            print(
-                case1.restricted[selected_skin]["weapon"]
-                + " | "
-                + case1.restricted[selected_skin]["skin"]
+            selected_skin = random.randint(
+                0, len(list_of_cases[case_id].restricted) - 1
             )
-            skin_image = pygame.image.load(
-                "./assets/"
-                + case_name
+            skin_full_name = (
+                list_of_cases[case_id].restricted[selected_skin]["weapon"]
+                + " | "
+                + list_of_cases[case_id].restricted[selected_skin]["skin"]
+            )
+            image_skin = pygame.image.load(
+                image_assets_path
+                + list_of_cases[case_id].case_name
                 + "/"
-                + str(case1.restricted[selected_skin]["id"])
+                + str(list_of_cases[case_id].restricted[selected_skin]["id"])
                 + ".png"
             )
 
         elif rarity_float <= odds.classified and rarity_float >= odds.restricted:
-            selected_skin = random.randint(0, len(case1.classified) - 1)
-            skin_image = pygame.image.load(
-                "./assets/"
-                + case_name
+            selected_skin = random.randint(
+                0, len(list_of_cases[case_id].classified) - 1
+            )
+            skin_full_name = (
+                list_of_cases[case_id].classified[selected_skin]["weapon"]
+                + " | "
+                + list_of_cases[case_id].classified[selected_skin]["skin"]
+            )
+            image_skin = pygame.image.load(
+                image_assets_path
+                + list_of_cases[case_id].case_name
                 + "/"
-                + str(case1.classified[selected_skin]["id"])
+                + str(list_of_cases[case_id].classified[selected_skin]["id"])
                 + ".png"
             )
 
         elif rarity_float <= odds.covert and rarity_float >= odds.classified:
-            selected_skin = random.randint(0, len(case1.covert) - 1)
-            print(
-                case1.covert[selected_skin]["weapon"]
+            selected_skin = random.randint(0, len(list_of_cases[case_id].covert) - 1)
+            skin_full_name = (
+                list_of_cases[case_id].covert[selected_skin]["weapon"]
                 + " | "
-                + case1.covert[selected_skin]["skin"]
+                + list_of_cases[case_id].covert[selected_skin]["skin"]
             )
-            skin_image = pygame.image.load(
-                "./assets/"
-                + case_name
+            image_skin = pygame.image.load(
+                image_assets_path
+                + list_of_cases[case_id].case_name
                 + "/"
-                + str(case1.covert[selected_skin]["id"])
+                + str(list_of_cases[case_id].covert[selected_skin]["id"])
                 + ".png"
             )
 
         elif rarity_float <= odds.exceedingly_rare and rarity_float >= odds.covert:
-            selected_skin = random.randint(0, len(case1.exceedingly_rare) - 1)
-            print(
-                case1.exceedingly_rare[selected_skin]["weapon"]
-                + " | "
-                + case1.exceedingly_rare[selected_skin]["skin"]
+            selected_skin = random.randint(
+                0, len(list_of_cases[case_id].exceedingly_rare) - 1
             )
-            skin_image = pygame.image.load(
-                "./assets/"
-                + case_name
+            selected_knife_skin_index = random.randint(
+                0,
+                (
+                    len(list_of_cases[case_id].exceedingly_rare[selected_skin]["skin"])
+                    - 1
+                ),
+            )
+            selected_knife_skin_name = list_of_cases[case_id].exceedingly_rare[
+                selected_skin
+            ]["skin"][selected_knife_skin_index]
+            if selected_knife_skin_index == 0:
+                skin_full_name = list_of_cases[case_id].exceedingly_rare[selected_skin][
+                    "weapon"
+                ]
+            else:
+                skin_full_name = (
+                    list_of_cases[case_id].exceedingly_rare[selected_skin]["weapon"]
+                    + " | "
+                    + selected_knife_skin_name
+                )
+            image_skin = pygame.image.load(
+                image_assets_path
+                + list_of_cases[case_id].case_name
+                + "/knives/"
+                + str(list_of_cases[case_id].exceedingly_rare[selected_skin]["id"])
                 + "/"
-                + str(case1.exceedingly_rare[selected_skin]["id"])
+                + str(selected_knife_skin_index)
                 + ".png"
             )
-        show_skin_image = True
 
-        csgo_weapons_case = False
-    if show_skin_image == True:
-        screen.blit(skin_image, (0, 0))
+        stattrak_float = 100 * random.random()
+
+        if stattrak_float <= odds.stattrak:
+            stattrak = True
+        else:
+            stattrak = False
+
+        case_opened = False
+
+        show_image_skin = True
+        show_image_case = True
+        if stattrak == True:
+            if rarity_float <= odds.exceedingly_rare and rarity_float >= odds.covert:
+                skin_full_name = "★ StatTrak™ " + skin_full_name
+            else:
+                skin_full_name = "StatTrak™ " + skin_full_name
+            show_image_stattrak = True
+        elif stattrak == False and (
+            rarity_float <= odds.exceedingly_rare and rarity_float >= odds.covert
+        ):
+            skin_full_name = "★ " + skin_full_name
+
+        print("[" + list_of_cases[case_id].case_full_name + "] " + skin_full_name)
+
+    if show_image_skin == True:
+        screen.blit(image_skin, (0, 0))
+    if show_image_stattrak == True:
+        screen.blit(image_stattrak, (400, 0))
+    if show_image_case == True:
+        screen.blit(image_case, (0, 300))
+
     pygame.display.flip()
     clock.tick(60)
-
+    ###################
 pygame.quit()
