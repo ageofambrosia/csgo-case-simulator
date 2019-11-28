@@ -5,7 +5,7 @@ skin1 = {
     "weapon": "MP7",
     "skin": "Skulls",
     "rarity": "Mil-Spec",
-    "float_range": [0.10, 0.26],
+    "wear_range": [0.10, 0.26],
     "type": "gun",
     "id": 1,
 }
@@ -14,7 +14,7 @@ skin2 = {
     "weapon": "AUG",
     "skin": "Wings",
     "rarity": "Mil-Spec",
-    "float_range": [0.00, 0.14],
+    "wear_range": [0.00, 0.14],
     "type": "gun",
     "id": 2,
 }
@@ -23,7 +23,7 @@ skin3 = {
     "weapon": "SG 553",
     "skin": "Ultraviolet",
     "rarity": "Mil-Spec",
-    "float_range": [0.06, 0.80],
+    "wear_range": [0.06, 0.80],
     "type": "gun",
     "id": 3,
 }
@@ -32,7 +32,7 @@ skin4 = {
     "weapon": "USP-S",
     "skin": "Dark Water",
     "rarity": "Restricted",
-    "float_range": [0.10, 0.26],
+    "wear_range": [0.10, 0.26],
     "type": "gun",
     "id": 4,
 }
@@ -41,7 +41,7 @@ skin5 = {
     "weapon": "M4A1-S",
     "skin": "Dark Water",
     "rarity": "Restricted",
-    "float_range": [0.10, 0.26],
+    "wear_range": [0.10, 0.26],
     "type": "gun",
     "id": 5,
 }
@@ -50,7 +50,7 @@ skin6 = {
     "weapon": "Glock-18",
     "skin": "Dragon Tattoo",
     "rarity": "Restricted",
-    "float_range": [0.00, 0.08],
+    "wear_range": [0.00, 0.08],
     "type": "gun",
     "id": 6,
 }
@@ -59,7 +59,7 @@ skin7 = {
     "weapon": "Desert Eagle",
     "skin": "Hypnotic",
     "rarity": "Classified",
-    "float_range": [0.00, 0.08],
+    "wear_range": [0.00, 0.08],
     "type": "gun",
     "id": 7,
 }
@@ -68,7 +68,7 @@ skin8 = {
     "weapon": "AK-47",
     "skin": "Case Hardened",
     "rarity": "Classified",
-    "float_range": [0.00, 1.00],
+    "wear_range": [0.00, 1.00],
     "type": "gun",
     "id": 8,
 }
@@ -77,7 +77,7 @@ skin9 = {
     "weapon": "AWP",
     "skin": "Lightning Strike",
     "rarity": "Covert",
-    "float_range": [0.00, 0.08],
+    "wear_range": [0.00, 0.08],
     "type": "gun",
     "id": 9,
 }
@@ -100,7 +100,7 @@ knife1 = {
         "Urban Masked",
     ],
     "rarity": "Exceedingly Rare",
-    "float_range": [0.00, 1.00],
+    "wear_range": [0.00, 1.00],
     "type": "knife",
     "id": "k1",
 }
@@ -123,7 +123,7 @@ knife2 = {
         "Urban Masked",
     ],
     "rarity": "Exceedingly Rare",
-    "float_range": [0.00, 1.00],
+    "wear_range": [0.00, 1.00],
     "type": "knife",
     "id": "k2",
 }
@@ -146,7 +146,7 @@ knife3 = {
         "Urban Masked",
     ],
     "rarity": "Exceedingly Rare",
-    "float_range": [0.00, 1.00],
+    "wear_range": [0.00, 1.00],
     "type": "knife",
     "id": "k3",
 }
@@ -169,7 +169,7 @@ knife4 = {
         "Urban Masked",
     ],
     "rarity": "Exceedingly Rare",
-    "float_range": [0.00, 1.00],
+    "wear_range": [0.00, 1.00],
     "type": "knife",
     "id": "k4",
 }
@@ -192,10 +192,26 @@ knife5 = {
         "Urban Masked",
     ],
     "rarity": "Exceedingly Rare",
-    "float_range": [0.00, 1.00],
+    "wear_range": [0.00, 1.00],
     "type": "knife",
     "id": "k5",
 }
+
+knife_skin_wears = [
+    [0.00, 1.00],
+    [0.00, 1.00],
+    [0.06, 0.80],
+    [0.00, 1.00],
+    [0.06, 0.80],
+    [0.00, 0.08],
+    [0.06, 0.80],
+    [0.06, 0.80],
+    [0.06, 0.80],
+    [0.06, 0.80],
+    [0.01, 0.26],
+    [0.00, 1.00],
+    [0.06, 0.80],
+]
 
 mil_spec = [skin1, skin2, skin3]
 restricted = [skin4, skin5, skin6]

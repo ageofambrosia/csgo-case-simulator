@@ -1,0 +1,5 @@
+factory_new = [0.00,0.07]
+minimal_wear = [0.07,0.15]
+field_tested = [0.15,0.38]
+well_worn = [0.38,0.45]
+battle_scarred = [0.45,1.00]
