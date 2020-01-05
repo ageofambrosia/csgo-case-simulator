@@ -1,0 +1,5 @@
+mil_spec = (75, 105, 255)
+restricted = (136, 71, 255)
+classified = (211, 46, 230)
+covert = (235, 75, 75)
+exceedingly_rare = (255, 215, 0)

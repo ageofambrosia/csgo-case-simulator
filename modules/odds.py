@@ -6,7 +6,6 @@ exceedingly_rare = covert + 0.26
 stattrak = 10
 
 """
-
 mil_spec = 0
 restricted = mil_spec + 0
 classified = restricted + 0

@@ -1,4 +1,4 @@
-case_full_name = "eSports 2013 Case"
+case_name_hf = "eSports 2013 Case"
 case_name = "esports_2013_case"
 
 skin1 = {

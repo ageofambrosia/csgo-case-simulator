@@ -1,4 +1,4 @@
-case_full_name = "CS:GO Weapon Case"
+case_name_hf = "CS:GO Weapon Case"
 case_name = "csgo_weapon_case"
 
 skin1 = {
@@ -8,6 +8,7 @@ skin1 = {
     "wear_range": [0.10, 0.26],
     "type": "gun",
     "id": 1,
+    "global_id": "c1s1",
 }
 
 skin2 = {
@@ -17,6 +18,7 @@ skin2 = {
     "wear_range": [0.00, 0.14],
     "type": "gun",
     "id": 2,
+    "global_id": "c1s2",
 }
 
 skin3 = {
@@ -26,6 +28,7 @@ skin3 = {
     "wear_range": [0.06, 0.80],
     "type": "gun",
     "id": 3,
+    "global_id": "c1s3",
 }
 
 skin4 = {
@@ -35,6 +38,8 @@ skin4 = {
     "wear_range": [0.10, 0.26],
     "type": "gun",
     "id": 4,
+    "global_id": "c1s4",
+
 }
 
 skin5 = {
@@ -44,6 +49,7 @@ skin5 = {
     "wear_range": [0.10, 0.26],
     "type": "gun",
     "id": 5,
+    "global_id": "c1s5",
 }
 
 skin6 = {
@@ -53,6 +59,8 @@ skin6 = {
     "wear_range": [0.00, 0.08],
     "type": "gun",
     "id": 6,
+    "global_id": "c1s6",
+
 }
 
 skin7 = {
@@ -62,6 +70,7 @@ skin7 = {
     "wear_range": [0.00, 0.08],
     "type": "gun",
     "id": 7,
+    "global_id": "c1s7",
 }
 
 skin8 = {
@@ -71,6 +80,7 @@ skin8 = {
     "wear_range": [0.00, 1.00],
     "type": "gun",
     "id": 8,
+    "global_id": "c1s8",
 }
 
 skin9 = {
@@ -80,6 +90,7 @@ skin9 = {
     "wear_range": [0.00, 0.08],
     "type": "gun",
     "id": 9,
+    "global_id": "c1s9",
 }
 
 knife1 = {
@@ -103,6 +114,7 @@ knife1 = {
     "wear_range": [0.00, 1.00],
     "type": "knife",
     "id": "k1",
+    "global_id": "c1k1",
 }
 
 knife2 = {
@@ -126,6 +138,7 @@ knife2 = {
     "wear_range": [0.00, 1.00],
     "type": "knife",
     "id": "k2",
+    "global_id": "c1k2",
 }
 
 knife3 = {
@@ -149,6 +162,7 @@ knife3 = {
     "wear_range": [0.00, 1.00],
     "type": "knife",
     "id": "k3",
+    "global_id": "c1k3",
 }
 
 knife4 = {
@@ -172,6 +186,7 @@ knife4 = {
     "wear_range": [0.00, 1.00],
     "type": "knife",
     "id": "k4",
+    "global_id": "c1k4",
 }
 
 knife5 = {
@@ -195,6 +210,7 @@ knife5 = {
     "wear_range": [0.00, 1.00],
     "type": "knife",
     "id": "k5",
+    "global_id": "c1k5",
 }
 
 knife_skin_wears = [
